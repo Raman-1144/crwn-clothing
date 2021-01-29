@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import './App.css';
 import Header from '../src/components/header/header.component';
 import HomePage from '../src/components/pages/homepage/homepage.component';
-import ShopPage from '../src/components/pages/shop/shop.component';
+import Shop from '../src/components/pages/shop/shop.component';
 import SignInAndSignUpPage from '../src/components/pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { connect } from 'react-redux';
@@ -40,7 +40,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
-          <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/shop' component={Shop} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         </Switch>
